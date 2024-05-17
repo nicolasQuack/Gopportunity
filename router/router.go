@@ -6,11 +6,11 @@ import (
 
 // Init initializes the router
 func Init () {
+	// Create a new router
 	r := g.Default();
-	r.GET("/ping", func(c *g.Context) {
-		c.JSON(200, g.H{
-			"message": "pong",
-		})
-	})
+	
+	initRoutes(r)
+
+	// Run the router on port 8080
 	r.Run(":8080")
 }
